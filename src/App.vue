@@ -1,15 +1,14 @@
 <script setup lang="ts">
-import About from './components/About.vue'
-import Gallery from './components/Gallery.vue'
-import Footer from './components/Footer.vue'
-import Header from './components/base/Header.vue'
+import Footer from '@/components/Footer.vue'
+import Header from '@/components/base/Header.vue'
 </script>
 
 <template>
   <div class="app-wrapper">
     <Header/>
-  <About />
-  <Gallery />
+<!--    <RouterLink to="/1">Go to Home</RouterLink>
+    <RouterLink to="/preparation">Go to About</RouterLink>-->
+    <RouterView />
   <Footer />
   </div>
 </template>
