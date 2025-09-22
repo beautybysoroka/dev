@@ -11,6 +11,7 @@
 <style lang="scss">
 .image-wrapper {
   width: 100%;
+  position: relative;
 
 }
 </style>

@@ -7,16 +7,12 @@ defineProps({
   text: {
     type: String,
     default: ''
-  },
-  styles: {
-    type: String,
-    default: ''
   }
 })
 </script>
 
 <template>
-<div class="text-block" :style="{styles}">
+<div class="text-block">
   <h2>{{title}}</h2>
   <p>{{text}}</p>
 </div>

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import textBlock from '@/components/base/textBlock.vue'
 import imageBlock from '@/components/base/ImageBlock.vue'
+import BaseButton from '@/components/base/BaseButton.vue'
 
 const homeTitle1 ='HELLO THERE'
 const homeText1 = 'My name is Maria.\n'+
@@ -15,6 +16,18 @@ const homeText1 = 'My name is Maria.\n'+
 const homeTitle2 ='BRIDAL \n' +
     'MAKEUP & HAIR'
 const homeText2 = 'Some cool text about bridal makeup'
+const homeTitle3 ='how we do it'
+const homeText3 = 'Some cool text about how we do it Some cool text about how we do it ' +
+    'Some cool text about how we do it' +
+    'Some cool text about how we do it' +
+    'Some cool text about how we do it'
+
+const homeTitle4 ='LETS IMAGINE...'
+const homeText4 = 'We agreed on i am helping you\n' +
+    'on your special day, figured out makeup\n' +
+    'and hair style. Lets discuss practical stuff. \n' +
+    'What is your checklist before \n' +
+    'the wedding? '
 
 </script>
 
@@ -35,9 +48,25 @@ const homeText2 = 'Some cool text about bridal makeup'
         :text="homeText2"
     />
     <imageBlock class="image-block__2">
-      <img class="image-block__image-2" src="/assets/img/photos/home/9.jpg" alt="">
-      <img class="image-block__image-3" src="/assets/img/photos/home/4.jpg" alt="">
+      <img class="image-block__image-2_1" src="/assets/img/photos/home/9.jpg" alt="">
+      <img class="image-block__image-2_2" src="/assets/img/photos/home/4.jpg" alt="">
     </imageBlock>
+    <textBlock
+        :title="homeTitle3"
+        class="text-block__3"
+        :text="homeText3"
+    />
+    <imageBlock class="image-block__3">
+      <img class="image-block__image-3_1" src="/assets/img/photos/home/8.jpg" alt="">
+      <img class="image-block__image-3_2" src="/assets/img/photos/home/ann.jpg" alt="">
+      <img class="image-block__image-3_3" src="/assets/img/photos/home/7.jpg" alt="">
+    </imageBlock>
+    <textBlock
+        :title="homeTitle4"
+        class="text-block-margin"
+        :text="homeText4"
+    />
+    <BaseButton :text="'What is the plan? '"/>
   </div>
 </template>
 
@@ -47,6 +76,14 @@ const homeText2 = 'Some cool text about bridal makeup'
   width: 80%;
   text-align: left;
   margin-top: 40px;
+}
+
+.text-block{
+  &__3{
+    text-align: right;
+    width: 80%;
+    margin-left: 15%;
+  }
 }
 body {
   width: 100%;
@@ -82,20 +119,45 @@ body {
       margin-top: 40px;
       margin-left: 20px;
       text-align: left;
+      overflow-x: hidden;
+      position: relative;
+      height: 100vh;
+      width: calc(100% - 20px);
     }
-    &__image-0 {
+    &__3 {
+      text-align: right;
+    }
+    &__image {
+      &-0 {
       width: 100%;
-    }
-    &__image-1 {
+      }
+      &-1 {
       width: 90%;
     }
-    &__image-2 {
-      width: 80%;
+      &-2_1 {
+        width: 80%;
+      }
+      &-2_2 {
+        width: 90%;
+        transform: translate(50px, -45px);
+      }
+      &-3_1 {
+        width: 60%;
+        position: absolute;
+        left: 0;
+        top: 22vh;
+      }
+      &-3_2 {
+        width: 50%;
+      }
+      &-3_3 {
+        width: 70%;
+        margin-top: 15vh;
+        z-index: 2;
+        position: relative;
+      }
     }
-    &__image-3 {
-      width: 90%;
-      transform: translate(50px, -45px);
-    }
+
   }
 }
 </style>
