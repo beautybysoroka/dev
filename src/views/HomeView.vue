@@ -4,42 +4,27 @@ import imageBlock from '@/components/base/ImageBlock.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
 import { useRouter } from "vue-router"
 import routeNames from '@/constants/routeNames'
+import {
+  homeTitle1,
+  homeTitle2,
+  homeTitle3,
+  homeTitle4,
+  homeTitle5,
+  homeTitle6,
+  homeText1,
+  homeText2,
+  homeText3,
+  homeText4,
+  homeText6,
+  seePriceListButtonText,
+  checkForMoreButtonText
+}
+from '@/constants/texts'
 
 const router = useRouter()
 
-const homeTitle1 ='HELLO THERE'
-const homeText1 = 'My name is Maria.\n'+
-    'I am an experienced makeup artist based in \n'+
-    'Copenhagen. I am mostly focused on weddings. \n'+
-    'Love to make people truly happy and look them\n'+
-    'beautiful on their special day. I’m passionate about\n'+
-    'my job and beauty in general. As a professional, \n'+
-    'I am very schedule precise and always keep \n'+
-    'my kit tidy and clean.'
 
-const homeTitle2 ='BRIDAL \n' +
-    'MAKEUP & HAIR'
-const homeText2 = 'Some cool text about bridal makeup'
-const homeTitle3 ='how we do it'
-const homeText3 = 'Some cool text about how we do it Some cool text about how we do it ' +
-    'Some cool text about how we do it' +
-    'Some cool text about how we do it' +
-    'Some cool text about how we do it'
-
-const homeTitle4 ='LETS IMAGINE...'
-const homeText4 = 'We agreed on i am helping you\n' +
-    'on your special day, figured out makeup\n' +
-    'and hair style. Lets discuss practical stuff. \n' +
-    'What is your checklist before \n' +
-    'the wedding? '
-const homeTitle5 = 'WHAT ABOUT THE PRICE?'
-const homeTitle6 = 'OTHER MAKEUP'
-const homeText6 = 'I also can prepare you for a big event,\n' +
-    'gay party or commercial photoshoot.'
-const seePriceListButtonText =  'Lets see the price list'
-const checkFormoreButtonText =  'Check for more works here'
-
-const routeTo = (routeName) => { router.push({ name: routeName}) }
+const routeTo = (routeName: string) => { router.push({ name: routeName}) }
 
 
 </script>
@@ -95,7 +80,7 @@ const routeTo = (routeName) => { router.push({ name: routeName}) }
         class="text-block-margin text-block-margin_width-70"
         :text="homeText6"
     />
-    <BaseButton :text="checkFormoreButtonText" @click="routeTo(routeNames.PORTFOLIO)"/>
+    <BaseButton :text="checkForMoreButtonText" @click="routeTo(routeNames.PORTFOLIO)"/>
   </div>
 </template>
 
