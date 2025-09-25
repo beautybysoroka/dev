@@ -2,6 +2,10 @@
 import textBlock from '@/components/base/textBlock.vue'
 import imageBlock from '@/components/base/ImageBlock.vue'
 import BaseButton from '@/components/base/BaseButton.vue'
+import { useRouter } from "vue-router"
+import routeNames from '@/constants/routeNames'
+
+const router = useRouter()
 
 const homeTitle1 ='HELLO THERE'
 const homeText1 = 'My name is Maria.\n'+
@@ -28,6 +32,15 @@ const homeText4 = 'We agreed on i am helping you\n' +
     'and hair style. Lets discuss practical stuff. \n' +
     'What is your checklist before \n' +
     'the wedding? '
+const homeTitle5 = 'WHAT ABOUT THE PRICE?'
+const homeTitle6 = 'OTHER MAKEUP'
+const homeText6 = 'I also can prepare you for a big event,\n' +
+    'gay party or commercial photoshoot.'
+const seePriceListButtonText =  'Lets see the price list'
+const checkFormoreButtonText =  'Check for more works here'
+
+const routeTo = (routeName) => { router.push({ name: routeName}) }
+
 
 </script>
 
@@ -63,10 +76,26 @@ const homeText4 = 'We agreed on i am helping you\n' +
     </imageBlock>
     <textBlock
         :title="homeTitle4"
-        class="text-block-margin"
+        class="text-block-margin text-block-margin_bottom_20"
         :text="homeText4"
     />
-    <BaseButton :text="'What is the plan? '"/>
+    <BaseButton :text="'What is the plan? '" @click="routeTo(routeNames.PLAN)"/>
+    <img class="image-block__image-4" src="/assets/img/photos/home/6.jpg" alt="">
+    <textBlock
+        :title="homeTitle5"
+        class="text-block-margin text-block-price text-block-margin_width-60"
+    />
+    <BaseButton :text="seePriceListButtonText" @click="routeTo(routeNames.PRICE)"/>
+    <imageBlock class="image-block__5">
+      <img class="image-block__image-5" src="/assets/img/photos/home/12.jpg" alt="">
+    </imageBlock>
+
+    <textBlock
+        :title="homeTitle6"
+        class="text-block-margin text-block-margin_width-70"
+        :text="homeText6"
+    />
+    <BaseButton :text="checkFormoreButtonText" @click="routeTo(routeNames.PORTFOLIO)"/>
   </div>
 </template>
 
@@ -76,9 +105,22 @@ const homeText4 = 'We agreed on i am helping you\n' +
   width: 80%;
   text-align: left;
   margin-top: 40px;
+
+  &_bottom_20 {
+    margin-bottom: 40px;
+  }
+  &_width-60 {
+    width: 60%;
+  }
+  &_width-70 {
+    width: 70%;
+  }
 }
 
 .text-block{
+  &-price {
+    font-size: 34px;
+  }
   &__3{
     text-align: right;
     width: 80%;
@@ -121,11 +163,16 @@ body {
       text-align: left;
       overflow-x: hidden;
       position: relative;
-      height: 100vh;
       width: calc(100% - 20px);
     }
     &__3 {
       text-align: right;
+      margin-top: 40px;
+    }
+    &__5 {
+      text-align: right;
+      margin-top: 40px;
+      margin-bottom: 50px;
     }
     &__image {
       &-0 {
@@ -155,6 +202,14 @@ body {
         margin-top: 15vh;
         z-index: 2;
         position: relative;
+      }
+      &-4 {
+        width: 100%;
+        margin-top: 40px;
+      }
+      &-5 {
+        width: 75%;
+        margin-right: 12px;
       }
     }
 

@@ -10,6 +10,8 @@ const contacts = {
 
 <template>
   <footer>
+    <h2>CONTACT ME</h2>
+    <p class="footer__lets">Lets make you beautiful</p>
     <div class="footer__links">
     <a :href="contacts.EMAIL" target="_blank"><img src="/assets/icons/email.svg" alt="email"></a>
     <a :href="contacts.INSTAGRAM" target="_blank"><img src="/assets/icons/instagram.svg" alt="instagram"></a>
@@ -20,23 +22,32 @@ const contacts = {
   </footer>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 footer {
-  display: flex;
-  align-content: center;
   margin-top: 40px;
-  margin-bottom: 40px;
+  text-align: center;
+
+  h2 {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+
 }
-.footer__links {
-  width: 50%;
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: space-between;
-  grid-gap: 10px;
+.footer {
+  &__links {
+    width: 50%;
+    display: flex;
+    margin: 40px auto 60px;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 10px;
+  }
+  &__lets {
+    transform: translateY(-10px);
+  }
 }
 .footer__links a img {
-  width: 30px;
+  width: 24px;
   color: #3d3c3c;
 }
 @media (max-width: 768px) {

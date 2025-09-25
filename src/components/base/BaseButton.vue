@@ -15,10 +15,10 @@ defineProps({
 
 <style scoped lang="scss">
 .button-block {
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: #F9E1C7;
   width: fit-content;
-  padding: 8px 32px;
+  padding: 18px 40px;
   margin: 20px auto;
 }
 </style>

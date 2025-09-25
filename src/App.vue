@@ -6,8 +6,6 @@ import Header from '@/components/base/Header.vue'
 <template>
   <div class="app-wrapper">
     <Header/>
-<!--    <RouterLink to="/1">Go to Home</RouterLink>
-    <RouterLink to="/preparation">Go to About</RouterLink>-->
     <RouterView />
   <Footer />
   </div>
