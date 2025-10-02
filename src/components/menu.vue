@@ -1,13 +1,17 @@
 <script setup>
 import { ref } from "vue";
+import routeNames from '@/constants/routeNames'
 
 const props = defineProps({
   menuItems: {
     type: Array,
     default: () => [
-      { to: "/", label: "Home" },
-      { to: "/preparation", label: "Preparation" },
-      { to: "/plan", label: "Plan" },
+      { to:routeNames.MAIN, label: "Home" },
+      { to: routeNames.PLAN, label: "plan" },
+      { to: routeNames.PORTFOLIO, label: "Portfolio" },
+      { to: routeNames.PRICE, label: "Price" },
+      { to: routeNames.QUASTIONNAIRE, label: "Questionnaire" },
+      { to: routeNames.MAIN, hash: '#contacts', label: "Contacts" }
     ],
   },
 });
@@ -29,7 +33,7 @@ const isOpen = ref(false);
         <router-link
             v-for="item in menuItems"
             :key="item.to"
-            :to="item.to"
+            :to="{ name: item.to, hash: item?.hash }"
             class="menu-link"
             @click="isOpen = false"
         >
@@ -40,7 +44,7 @@ const isOpen = ref(false);
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .burger-menu {
   position: relative;
   z-index: 1000;
@@ -61,12 +65,16 @@ const isOpen = ref(false);
 }
 
 .burger-icon span {
-  height: 3px;
+  height: 1px;
   background: #333;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
+.burger-icon span.open {
+  background: #848484;
+  z-index: 1000;
+}
 /* Animate icon when open */
 .burger-icon span.open:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
@@ -75,7 +83,7 @@ const isOpen = ref(false);
   opacity: 0;
 }
 .burger-icon span.open:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+  transform: rotate(-45deg) translate(5px, -6px);
 }
 
 /* Sidebar Menu */
@@ -85,19 +93,25 @@ const isOpen = ref(false);
   left: 0;
   height: 100%;
   width: 100vw;
-  background: #222;
+  background: #F9E1C7;
   padding-top: 60px;
   display: flex;
   flex-direction: column;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4);
+
+  a {
+    text-transform: uppercase;
+  }
 }
 
 /* Sidebar Links */
 .menu-link {
-  color: #fff;
-  padding: 15px 20px;
+  color: #848484;
+  padding: 0 20px 15px 20px;
   text-decoration: none;
   transition: background 0.2s;
+  text-align: left;
+  font-size: 35px;
 }
 
 .menu-link:hover {

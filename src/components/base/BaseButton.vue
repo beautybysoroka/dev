@@ -20,5 +20,7 @@ defineProps({
   width: fit-content;
   padding: 18px 40px;
   margin: 20px auto;
+  text-transform: uppercase;
+  text-align: center;
 }
 </style>

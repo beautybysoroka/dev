@@ -9,7 +9,7 @@ const contacts = {
 </script>
 
 <template>
-  <footer>
+  <footer id="contacts">
     <h2>CONTACT ME</h2>
     <p class="footer__lets">Lets make you beautiful</p>
     <div class="footer__links">
