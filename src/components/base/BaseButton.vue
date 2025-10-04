@@ -22,5 +22,10 @@ defineProps({
   margin: 20px auto;
   text-transform: uppercase;
   text-align: center;
+  transition:.8s;
+  &:hover {
+    cursor: pointer;
+    background-color: #efc79b;
+  }
 }
 </style>

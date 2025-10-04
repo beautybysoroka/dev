@@ -15,6 +15,7 @@ import {
   homeText2,
   homeText3,
   homeText4,
+  homeText5,
   homeText6,
   seePriceListButtonText,
   checkForMoreButtonText
@@ -68,6 +69,7 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
     <img class="image-block__image-4" src="/assets/img/photos/home/6.jpg" alt="">
     <textBlock
         :title="homeTitle5"
+        :text="homeText5"
         class="text-block-margin text-block-price text-block-margin_width-60"
     />
     <BaseButton :text="seePriceListButtonText" @click="routeTo(routeNames.PRICE)"/>
@@ -103,7 +105,7 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
 }
 
 .text-block{
-  &-price {
+  &-price h2{
     font-size: 34px;
   }
   &__3{
