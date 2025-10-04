@@ -30,6 +30,11 @@ const planPlaceText = [
 .plan-wrapper {
   padding: 16px;
 
+  @media (min-width: 769px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+
   h2 {
     font-size: 30px;
     text-align: left;

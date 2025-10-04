@@ -119,16 +119,23 @@ body {
   font-weight: 100;
   font-style: normal;
 }
-.about-wrapper {
-  width: 50vw;
-  margin: 0 auto 40px;
-}
 
 .about-wrapper p {
   text-align: left;
   margin: 80px 0 0 -40px;
 }
-@media (max-width: 768px) {
+@media (min-width: 769px) {
+  .image-block {
+    &__image {
+      &-0 {
+        width: 100%;
+      }
+      &-1 {
+        width: 90%;
+      }
+    }
+  }
+}
   .about-wrapper {
     width: 100vw;
     margin: 0;
@@ -197,7 +204,11 @@ body {
         margin-right: 12px;
       }
     }
-
+  }
+.about-wrapper {
+  margin: 0 auto 40px;
+  @media(min-width: 769px) {
+    width: 40vw;
   }
 }
 </style>

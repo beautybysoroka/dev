@@ -47,6 +47,15 @@ h4 {
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-
+.common-wrapper {
+  @media (min-width: 769px) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.small-common-wrapper {
+  @media (min-width: 769px) {
+    width: 60%;
+    margin: 0 auto;
+  }
 }

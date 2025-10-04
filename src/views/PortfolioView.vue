@@ -20,7 +20,7 @@ const commercialPhotos = Object.values(commercialSrc)
 </script>
 
 <template>
-  <div class="portfolio-wrapper">
+  <div class="portfolio-wrapper common-wrapper">
     <div class="portfolio-menu">
       <p @click="routeToBrides()">Brides</p>
       <p @click="routeToCommercial()">Commercial</p>

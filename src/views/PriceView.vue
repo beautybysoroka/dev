@@ -22,7 +22,7 @@ const other = [
 </script>
 
 <template>
-<div class="price__wrapper">
+<div class="price__wrapper small-common-wrapper">
   <h2>{{homeTitle5}}</h2>
   <h4>Brides</h4>
   <div class="price-block" v-for="(price, index) in prices" :key="index">

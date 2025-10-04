@@ -19,6 +19,10 @@ import Header from '@/components/base/Header.vue'
   justify-content: space-between;
   font-family: Raleway,serif;
   background: #fff;
+
+  @media(min-width: 769px) {
+    margin: 0 auto;
+  }
 }
 
 .logo {

@@ -70,7 +70,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <div class="questions-wrapper">
+  <div class="questions-wrapper small-common-wrapper">
     <template v-if="!isFormSubmited">
       <h3>Lets fill simple form to find out your request</h3>
       <div class="questions-form">

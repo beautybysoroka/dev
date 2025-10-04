@@ -27,5 +27,8 @@ const routeToMain = () => {   router.push({ name: routeNames.MAIN}) }
 }
 .web-header__logo {
   width: 35%;
+  @media (min-width: 769px) {
+    width: 15%;
+  }
 }
 </style>
