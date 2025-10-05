@@ -11,12 +11,13 @@ const prices = [
   {title: 'Other cities in Europe', price: 'Depends on distance'}
 ]
 const makeup = [
-  {title: 'Classic makeup', price: '700 dkk'},
-  {title: 'Artistic makeup', price: '1000 dkk'}
+  {title: 'Makeup', price: '700 dkk'},
+  {title: 'Hairstyle', price: '700 dkk'},
+  {title: 'Makeup & hairstyle', price: '1000 dkk'}
 ]
 const other = [
-  {title: 'Brows', price: '350 dkk'},
-  {title: 'Eyelashes', price: '250 dkk'}
+  {title: 'Brows', price: '350 dkk'}/*,
+  {title: 'Eyelashes', price: '250 dkk'}*/
 ]
 
 </script>
@@ -31,9 +32,9 @@ const other = [
   </div>
   <p class="price__bridal-includes">Bridal package includes:</p>
   <p>Eyelashes</p>
-  <p>Mini makeup kit to go for you</p>
+  <p>Touch up kit</p>
   <p>My transit to you</p>
-  <h4>Makeup</h4>
+  <h4>Events</h4>
   <div class="price-block" v-for="(price, index) in makeup" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>

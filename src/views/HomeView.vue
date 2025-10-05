@@ -14,6 +14,7 @@ import {
   homeText1,
   homeText2,
   homeText3,
+  homeText3_2,
   homeText4,
   homeText5,
   homeText6,
@@ -54,6 +55,7 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
         :title="homeTitle3"
         class="text-block__3"
         :text="homeText3"
+        :text2="homeText3_2"
     />
     <imageBlock class="image-block__3">
       <img class="image-block__image-3_1" src="/assets/img/photos/home/8.jpg" alt="">
@@ -112,6 +114,10 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
     text-align: right;
     width: 80%;
     margin-left: 15%;
+
+    h2 {
+      text-transform: uppercase !important;
+    }
   }
 }
 body {

@@ -1,5 +1,5 @@
 
-export const homeTitle1 ='HELLO THERE'
+export const homeTitle1 ='HELLO BEAUTY'
 export const homeText1 = 'My name is Maria.\n'+
     'I am an experienced makeup artist based in \n'+
     'Copenhagen. I am mostly focused on weddings. \n'+
@@ -13,19 +13,19 @@ export const homeText1 = 'My name is Maria.\n'+
 export const homeTitle2 ='BRIDAL \n' +
     'MAKEUP & HAIR'
 export const homeText2 = 'My main passion is bridal looks. What could be better ' +
-    'then helping brides to feel like a princes? Once felt joy of' +
-    'participated on weddings, i started learn how to bring every aspect' +
-    'of my work with brides to perfection.' +
-    'Timing, preparation, materials - its all a small puzzle' +
+    'then helping brides to feel like a princess? Once felt joy of ' +
+    'participated in weddings, i started learn how to bring every aspect ' +
+    'of my work with brides to perfection. ' +
+    'Timing, preparation, materials - its all a small puzzle ' +
     'of hundreds of details. And each and every of them is important. '
 export const homeTitle3 ='How will we do it? '
 export const homeText3 = 'Lets dive into details. How will we do it? ' +
-    'You will send me references and examples of how you wanna look, we will' +
+    'You will send me references and examples of how you wanna look, we will ' +
     'discuss details regarding your wishes, your skin tone, what type of photos ' +
     'you expect to get. Lets make sure everything will be perfect, so you ' +
-    'will not find a reason to worry about anything today and focus on being ' +
-    'happy and most beautiful bride in the world.' +
-    'We also can plan a tryout to make sure everything will look the way ' +
+    'will not find a reason to worry about anything on your special day and focus on being ' +
+    'happy and most beautiful bride in the world. '
+export const homeText3_2 = 'We also can plan a tryout to make sure everything will look the way ' +
     'you see it.'
 
 export const homeTitle4 ='LETS IMAGINE...'

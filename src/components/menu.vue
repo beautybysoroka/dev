@@ -7,10 +7,10 @@ const props = defineProps({
     type: Array,
     default: () => [
       { to:routeNames.MAIN, label: "Home" },
-      { to: routeNames.PLAN, label: "plan" },
+      { to: routeNames.PLAN, label: "Plan" },
       { to: routeNames.PORTFOLIO, label: "Portfolio" },
-      { to: routeNames.PRICE, label: "Price" },
-      { to: routeNames.QUASTIONNAIRE, label: "Questionnaire" },
+      { to: routeNames.PRICE, label: "Price" },/*,
+      { to: routeNames.QUASTIONNAIRE, label: "Questionnaire" },*/
       { to: routeNames.MAIN, hash: '#contacts', label: "Contacts" }
     ],
   },
@@ -93,20 +93,20 @@ const isOpen = ref(false);
   left: 0;
   height: 100%;
   width: 100vw;
-  background: #F9E1C7;
+  background: #e0f3f6;
   padding-top: 60px;
   display: flex;
   flex-direction: column;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.4);
 
   a {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
   }
 }
 
 /* Sidebar Links */
 .menu-link {
-  color: #848484;
+  color: #333333;
   padding: 0 20px 15px 20px;
   text-decoration: none;
   transition: background 0.2s;
