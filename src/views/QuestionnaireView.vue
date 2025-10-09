@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import BaseButton from '@/components/base/BaseButton.vue'
 import { ref } from 'vue'
-import emailjs from 'emailjs-com'
+/*import emailjs from 'emailjs-com'*/
 
 const isFormSubmited = ref(false)
 const form = ref<Record<string, string>>({
@@ -53,7 +53,9 @@ const inputs:InputField[] = [
 ]
 
 const submitForm = async () => {
-  try {
+  return
+
+  /*try {
     await emailjs.sendForm(
         'your_service_id',   // e.g. "service_xxx"
         'your_template_id',  // e.g. "template_xxx"
@@ -65,7 +67,7 @@ const submitForm = async () => {
     console.error('FAILED...', error)
     alert('Message failed to send.')
   }
-  isFormSubmited.value = true
+  isFormSubmited.value = true*/
 }
 </script>
 
