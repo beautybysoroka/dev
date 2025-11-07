@@ -32,6 +32,13 @@ export const router = createRouter({
     }
 })
 
+// reload handling because github only serves static files
+const urlParams = new URLSearchParams(window.location.search);
+const redirect = urlParams.get('redirect');
+if (redirect) {
+    window.history.replaceState(null, '', redirect);
+}
+
 
 const app = createApp(App)
 app.use(router)

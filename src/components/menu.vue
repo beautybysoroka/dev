@@ -66,13 +66,14 @@ const isOpen = ref(false);
 
 .burger-icon span {
   height: 1px;
-  background: #333;
+  width: 100%;
+  background-color: #333;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
 
 .burger-icon span.open {
-  background: #848484;
+  background-color: #848484;
   z-index: 1000;
 }
 /* Animate icon when open */
