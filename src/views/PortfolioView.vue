@@ -9,7 +9,9 @@ const routeToCommercial = () => { router.push({name: routeNames.PORTFOLIO, hash:
 
 const openedImage = ref(-1)
 
-const bridesSrc = import.meta.glob('../portfolio/brides/*.{png,jpg,jpeg,gif,svg}', {
+const regexImgPlusVideo = '*.{png,jpg,jpeg,gif,svg,mp4,mov}'
+
+const bridesSrc = import.meta.glob('../portfolio/brides/*.{png,jpg,jpeg,gif,svg,mp4}', {
   eager: true,
   import: 'default'
 }) as Record<string, string>
@@ -37,19 +39,34 @@ const isVideo = (src: string) => src.includes('mp4')
     </div>
     <h2 id="brides">Brides</h2>
     <div  class="gallery gallery-brides">
+      <template v-for="(src, idx) in bridesPhotos">
+      <video
+          :src="src"
+          @click="toggleOpenedImage(idx)"
+          v-if="isVideo(src)"
+          autoplay muted loop playsinline
+          :class="{'opened' : isCurrentImageOpened(idx)}"
+      >
+      </video>
       <img
-          v-for="(src, idx) in bridesPhotos"
+          v-else
           :key="src"
           :src="src"
           alt="gallery image"
           @click="toggleOpenedImage(idx)"
           :class="{'opened' : isCurrentImageOpened(idx)}"
       />
+      </template>
     </div>
     <h2 id="commercial">Commercial</h2>
     <div  class="gallery gallery-commercial">
       <template v-for="(src, idx) in commercialPhotos" :key="src">
-        <video :src="src" v-if="isVideo(src)" autoplay muted loop playsinline></video>
+        <video :src="src"
+               @click="toggleOpenedImage(idx)"
+               v-if="isVideo(src)"
+               :class="{'opened' : isCurrentImageOpened(idx)}"
+               autoplay muted loop playsinline>
+        </video>
         <img
             v-else
             :src="src"
