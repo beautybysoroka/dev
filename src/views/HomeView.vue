@@ -33,14 +33,14 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
 
 <template>
   <div class="about-wrapper">
-    <img class="image-block__image-0" src="/assets/img/photos/home/Mariia.jpg" alt="Mariia Soroks">
+    <img class="image-block__image-0" src="/assets/img/photos/home/Mariia.webp" alt="Mariia Soroks">
     <textBlock
     :title="homeTitle1"
     class="text-block-margin"
     :text="homeText1"
     />
     <imageBlock class="image-block__1">
-      <img class="image-block__image-1" src="/assets/img/photos/home/11.jpg" alt="">
+      <img class="image-block__image-1" src="/assets/img/photos/home/11.webp" alt="">
     </imageBlock>
     <textBlock
         :title="homeTitle2"
@@ -48,8 +48,8 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
         :text="homeText2"
     />
     <imageBlock class="image-block__2">
-      <img class="image-block__image-2_1" src="/assets/img/photos/home/9.jpg" alt="">
-      <img class="image-block__image-2_2" src="/assets/img/photos/home/4.jpg" alt="">
+      <img class="image-block__image-2_1" src="/assets/img/photos/home/9.webp" alt="">
+      <img class="image-block__image-2_2" src="/assets/img/photos/home/4.webp" alt="">
     </imageBlock>
     <textBlock
         :title="homeTitle3"
@@ -58,9 +58,9 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
         :text2="homeText3_2"
     />
     <imageBlock class="image-block__3">
-      <img class="image-block__image-3_1" src="/assets/img/photos/home/8.jpg" alt="">
-      <img class="image-block__image-3_2" src="/assets/img/photos/home/ann.jpg" alt="">
-      <img class="image-block__image-3_3" src="/assets/img/photos/home/7.jpg" alt="">
+      <img class="image-block__image-3_1" src="/assets/img/photos/home/8.webp" alt="">
+      <img class="image-block__image-3_2" src="/assets/img/photos/home/ann.webp" alt="">
+      <img class="image-block__image-3_3" src="/assets/img/photos/home/7.webp" alt="">
     </imageBlock>
     <textBlock
         :title="homeTitle4"
@@ -68,7 +68,7 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
         :text="homeText4"
     />
     <BaseButton :text="'What is the plan? '" @click="routeTo(routeNames.PLAN)"/>
-    <img class="image-block__image-4" src="/assets/img/photos/home/6.jpg" alt="">
+    <img class="image-block__image-4" src="/assets/img/photos/home/6.webp" alt="">
     <textBlock
         :title="homeTitle5"
         :text="homeText5"
@@ -76,7 +76,7 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
     />
     <BaseButton :text="seePriceListButtonText" @click="routeTo(routeNames.PRICE)"/>
     <imageBlock class="image-block__5">
-      <img class="image-block__image-5" src="/assets/img/photos/home/12.jpg" alt="">
+      <img class="image-block__image-5" src="/assets/img/photos/home/12.webp" alt="">
     </imageBlock>
 
     <textBlock
