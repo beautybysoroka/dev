@@ -22,8 +22,13 @@ import {
   checkForMoreButtonText
 }
 from '@/constants/texts'
+import {useDictionaryStore} from "@/utils/dictionary/dictionary.ts";
+import {storeToRefs} from "pinia";
 
 const router = useRouter()
+
+const dictStore = useDictionaryStore()
+const { dict } = storeToRefs(dictStore)
 
 
 const routeTo = (routeName: string) => { router.push({ name: routeName}) }
@@ -35,27 +40,27 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
   <div class="about-wrapper">
     <img class="image-block__image-0" src="/assets/img/photos/home/Mariia.webp" alt="Mariia Soroks">
     <textBlock
-    :title="homeTitle1"
+    :title="dict.homeTitle1"
     class="text-block-margin"
-    :text="homeText1"
+    :text="dict.homeText1"
     />
     <imageBlock class="image-block__1">
       <img class="image-block__image-1" src="/assets/img/photos/home/11.webp" alt="">
     </imageBlock>
     <textBlock
-        :title="homeTitle2"
+        :title="dict.homeTitle2"
         class="text-block-margin"
-        :text="homeText2"
+        :text="dict.homeText2"
     />
     <imageBlock class="image-block__2">
       <img class="image-block__image-2_1" src="/assets/img/photos/home/9.webp" alt="">
       <img class="image-block__image-2_2" src="/assets/img/photos/home/4.webp" alt="">
     </imageBlock>
     <textBlock
-        :title="homeTitle3"
+        :title="dict.homeTitle3"
         class="text-block__3"
-        :text="homeText3"
-        :text2="homeText3_2"
+        :text="dict.homeText3"
+        :text2="dict.homeText3_2"
     />
     <imageBlock class="image-block__3">
       <img class="image-block__image-3_1" src="/assets/img/photos/home/8.webp" alt="">
@@ -63,28 +68,28 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
       <img class="image-block__image-3_3" src="/assets/img/photos/home/7.webp" alt="">
     </imageBlock>
     <textBlock
-        :title="homeTitle4"
+        :title="dict.homeTitle4"
         class="text-block-margin text-block-margin_bottom_20"
         :text="homeText4"
     />
     <BaseButton :text="'What is the plan? '" @click="routeTo(routeNames.PLAN)"/>
     <img class="image-block__image-4" src="/assets/img/photos/home/6.webp" alt="">
     <textBlock
-        :title="homeTitle5"
-        :text="homeText5"
+        :title="dict.homeTitle5"
+        :text="dict.homeText5"
         class="text-block-margin text-block-price text-block-margin_width-60"
     />
-    <BaseButton :text="seePriceListButtonText" @click="routeTo(routeNames.PRICE)"/>
+    <BaseButton :text="dict.seePriceListButtonText" @click="routeTo(routeNames.PRICE)"/>
     <imageBlock class="image-block__5">
       <img class="image-block__image-5" src="/assets/img/photos/home/12.webp" alt="">
     </imageBlock>
 
     <textBlock
-        :title="homeTitle6"
+        :title="dict.homeTitle6"
         class="text-block-margin text-block-margin_width-70"
-        :text="homeText6"
+        :text="dict.homeText6"
     />
-    <BaseButton :text="checkForMoreButtonText" @click="routeTo(routeNames.PORTFOLIO)"/>
+    <BaseButton :text="dict.checkForMoreButtonText" @click="routeTo(routeNames.PORTFOLIO)"/>
   </div>
 </template>
 
