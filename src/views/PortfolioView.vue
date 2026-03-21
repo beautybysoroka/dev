@@ -2,7 +2,7 @@
 import routeNames from '@/constants/routeNames'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
-import {useDictionaryStore} from "@/utils/dictionary/dictionary.ts";
+import {useDictionaryStore} from "@/utils/dictionary/dictionary";
 import {storeToRefs} from "pinia";
 
 const dictStore = useDictionaryStore()

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { homeTitle5 } from '@/constants/texts'
 import { ref, computed } from 'vue'
-import {useDictionaryStore} from "@/utils/dictionary/dictionary.ts";
+import {useDictionaryStore} from "@/utils/dictionary/dictionary";
 import {storeToRefs} from "pinia";
 
 type Currency = 'dkk' | 'euro'

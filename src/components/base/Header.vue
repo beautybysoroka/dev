@@ -2,7 +2,7 @@
 import { useRouter } from 'vue-router'
 import routeNames from '@/constants/routeNames'
 import Menu from '@/components/menu.vue'
-import LangSwitcher from '@/components/base/LangSwitcher.vue'
+import LangSwitcher from '@/components/base/langSwitcher.vue'
 
 const router = useRouter()
 const routeToMain = () => { router.push({ name: routeNames.MAIN }) }
