@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import { createWebHistory, createRouter } from 'vue-router'
+import { createPinia } from 'pinia'
 import routeNames from '@/constants/routeNames.js'
 import HomeView from '@/views/HomeView.vue'
 import PlanView from '@/views/PlanView.vue'
@@ -28,22 +29,22 @@ export const router = createRouter({
         if (to.hash) {
             return {
                 el: to.hash,
-                behavior: 'smooth', // nice smooth scroll
+                behavior: 'smooth',
             }
         }
-        // otherwise, scroll to top
         return { top: 0 }
     }
 })
 
-// reload handling because github only serves static files
 const urlParams = new URLSearchParams(window.location.search);
 const redirect = urlParams.get('redirect');
 if (redirect) {
     window.history.replaceState(null, '', redirect);
 }
 
+const pinia = createPinia()
 
 const app = createApp(App)
 app.use(router)
+app.use(pinia)
 app.mount('#app')

@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { homeTitle5 } from '@/constants/texts'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
+import {useDictionaryStore} from "@/utils/dictionary/dictionary.ts";
+import {storeToRefs} from "pinia";
 
 type Currency = 'dkk' | 'euro'
 
 const currentCurrency = ref<Currency>('dkk')
+
+const dictStore = useDictionaryStore()
+const { isDanish, dict } = storeToRefs(dictStore)
 
 const prices = {
   dkk: [
@@ -54,6 +59,59 @@ const other = {
   ]
 }
 
+ const prices_dk = {
+  dkk: [
+    { title: 'Makeup / Hårstyling', price: '900 dkk' },
+    { title: 'Makeup og hår', price: '1500 dkk' },
+    { title: 'Ankomst før kl. 08:00', price: '300 dkk' },
+    { title: 'Brud + 1 brudepige', price: '2800 dkk' },
+    { title: 'Brud + 2 brudepiger', price: '4000 dkk' },
+    { title: 'Brud + 3 brudepiger', price: '5000 dkk' },
+    { title: 'Områder uden for Storkøbenhavn', price: 'Skriv til mig' },
+    { title: 'Andre byer i Europa', price: 'Skriv til mig' }
+  ],
+  euro: [
+    { title: 'Makeup / Hårstyling', price: '120 €' },
+    { title: 'Makeup og hår', price: '200 €' },
+    { title: 'Ankomst før kl. 08:00', price: '40 €' },
+    { title: 'Brud + 1 brudepige', price: '370 €' },
+    { title: 'Brud + 2 brudepiger', price: '530 €' },
+    { title: 'Brud + 3 brudepiger', price: '665 €' },
+    { title: 'Områder uden for Storkøbenhavn', price: 'Skriv til mig' },
+    { title: 'Andre byer i Europa', price: 'Afhænger af afstand' }
+  ]
+}
+
+ const makeup_dk = {
+  dkk: [
+    { title: 'Makeup', price: '900 dkk' },
+    { title: 'Hårstyling', price: '900 dkk' },
+    { title: 'Makeup og hår', price: '1500 dkk' }
+  ],
+  euro: [
+    { title: 'Makeup', price: '120 €' },
+    { title: 'Hårstyling', price: '120 €' },
+    { title: 'Makeup og hår', price: '200 €' }
+  ]
+}
+
+ const other_dk = {
+  dkk: [
+    { title: 'Bryn', price: '350 dkk' }
+    /*,
+    { title: 'Øjenvipper', price: '250 dkk' }*/
+  ],
+  euro: [
+    { title: 'Bryn', price: '45 €' }
+    /*,
+    { title: 'Øjenvipper', price: '35 €' }*/
+  ]
+}
+
+const currentPrices = computed(() => isDanish.value ? prices_dk : prices)
+const currentMakeup = computed(() => isDanish.value ? makeup_dk : makeup)
+const currentOther = computed(() => isDanish.value ? other_dk : other)
+
 
 const changeCurrency = (currency: Currency) => { currentCurrency.value = currency }
 
@@ -67,22 +125,22 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
     <p>/</p>
     <p @click="changeCurrency('euro')" :class="{'price__currency_active': currentCurrency === 'euro'}">Euro</p>
   </div>
-  <h4>Brides</h4>
-  <div class="price-block" v-for="(price, index) in prices[currentCurrency]" :key="index">
+  <h4>{{ dict.brides }}</h4>
+  <div class="price-block" v-for="(price, index) in currentPrices[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
   </div>
-  <p class="price__bridal-includes">Bridal package includes:</p>
-  <p>Eyelashes</p>
-  <p>Touch up kit</p>
-  <p>My transit to you</p>
-  <h4>Events</h4>
-  <div class="price-block" v-for="(price, index) in makeup[currentCurrency]" :key="index">
+  <p class="price__bridal-includes">{{dict.brideIncludes}}</p>
+  <p>{{ dict.eyelashes }}</p>
+  <p>{{dict.touch}}</p>
+  <p>{{dict.transit}}</p>
+  <h4>{{dict.events}}</h4>
+  <div class="price-block" v-for="(price, index) in currentMakeup[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
   </div>
-  <h4>Other</h4>
-  <div class="price-block" v-for="(price, index) in other[currentCurrency]" :key="index">
+  <h4>{{ dict.other }}</h4>
+  <div class="price-block" v-for="(price, index) in currentOther[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
   </div>

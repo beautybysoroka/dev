@@ -1,20 +1,20 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import routeNames from '@/constants/routeNames'
+import {useDictionaryStore} from "@/utils/dictionary/dictionary.js";
+import {storeToRefs} from "pinia";
 
-const props = defineProps({
-  menuItems: {
-    type: Array,
-    default: () => [
-      { to:routeNames.MAIN, label: "Home" },
-      { to: routeNames.PLAN, label: "Plan" },
-      { to: routeNames.PORTFOLIO, label: "Portfolio" },
-      { to: routeNames.PRICE, label: "Price" },/*,
+const dictStore = useDictionaryStore()
+const { dict } = storeToRefs(dictStore)
+
+const menuItems = computed(() => [
+  { to:routeNames.MAIN, label: dict.value.menu.home },
+  { to: routeNames.PLAN, label: dict.value.menu.plan },
+  { to: routeNames.PORTFOLIO, label: dict.value.menu.portfolio },
+  { to: routeNames.PRICE, label: dict.value.menu.price },/*,
       { to: routeNames.QUASTIONNAIRE, label: "Questionnaire" },*/
-      { to: routeNames.MAIN, hash: '#contacts', label: "Contacts" }
-    ],
-  },
-});
+  { to: routeNames.MAIN, hash: '#contacts', label: dict.value.menu.contacts }
+])
 
 const isOpen = ref(false);
 </script>

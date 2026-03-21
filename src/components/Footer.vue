@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import {useDictionaryStore} from "@/utils/dictionary/dictionary";
+import {storeToRefs} from "pinia";
+
 const contacts = {
   EMAIL: 'mailto:beautybysoroka@gmail.com',
   INSTAGRAM: 'https://www.instagram.com/beautybysoroka/',
@@ -6,12 +9,15 @@ const contacts = {
   WHATSAPP: 'https://wa.me/+79143366399',
   TELEGRAM: 'https://t.me/sorokamarie',
 }
+
+const dictStore = useDictionaryStore()
+const { dict } = storeToRefs(dictStore)
 </script>
 
 <template>
   <footer id="contacts">
-    <h2>CONTACT ME</h2>
-    <p class="footer__lets">Let's help your beauty shine. </p>
+    <h2>{{ dict.contactMe }}</h2>
+    <p class="footer__lets">{{ dict.helpYourBeauty }} </p>
     <div class="footer__links">
     <a :href="contacts.EMAIL" target="_blank"><img src="/assets/icons/email.svg" alt="email"></a>
     <a :href="contacts.INSTAGRAM" target="_blank"><img src="/assets/icons/instagram.svg" alt="instagram"></a>

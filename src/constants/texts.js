@@ -1,4 +1,7 @@
-
+export const langs = {
+    EN: 'EN',
+    DK: 'DK'
+}
 export const homeTitle1 ='HELLO BEAUTY!'
 export const homeText1 = 'My name is Maria.\n'+
     'I am an experienced makeup artist based in \n'+
