@@ -11,13 +11,13 @@ const openedImage = ref(-1)
 
 const regexImgPlusVideo = '*.{png,jpg,jpeg,gif,svg,mp4,mov}'
 
-const bridesSrc = import.meta.glob('../portfolio/brides/*.{png,jpg,jpeg,gif,svg,mp4}', {
+const bridesSrc = import.meta.glob('../portfolio/brides/*.{png,jpg,jpeg,gif,svg,mp4,webp}', {
   eager: true,
   import: 'default'
 }) as Record<string, string>
 const bridesPhotos = Object.values(bridesSrc)
 
-const commercialSrc = import.meta.glob('../portfolio/commercial/*.{png,jpg,jpeg,gif,svg,mp4}', {
+const commercialSrc = import.meta.glob('../portfolio/commercial/*.{png,jpg,jpeg,gif,svg,mp4,webp}', {
   eager: true,
   import: 'default'
 }) as Record<string, string>

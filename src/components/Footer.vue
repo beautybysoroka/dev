@@ -11,7 +11,7 @@ const contacts = {
 <template>
   <footer id="contacts">
     <h2>CONTACT ME</h2>
-    <p class="footer__lets">Lets make you beautiful</p>
+    <p class="footer__lets">Let's help your beauty shine. </p>
     <div class="footer__links">
     <a :href="contacts.EMAIL" target="_blank"><img src="/assets/icons/email.svg" alt="email"></a>
     <a :href="contacts.INSTAGRAM" target="_blank"><img src="/assets/icons/instagram.svg" alt="instagram"></a>
