@@ -2,16 +2,20 @@
 import { homeTitle5 } from '@/constants/texts'
 import { ref } from 'vue'
 
+type Currency = 'dkk' | 'euro'
+
+const currentCurrency = ref<Currency>('dkk')
+
 const prices = {
   dkk: [
     { title: 'Makeup / Hairstyle', price: '900 dkk' },
     { title: 'Makeup plus hair', price: '1500 dkk' },
     { title: 'Arrival before 8am', price: '300 dkk' },
     { title: 'Bride + 1 Bridesmaid ', price: '2800 dkk' },
-    { title: 'Bride + 2 Bridesmaid ', price: '4000 dkk' },
-    { title: 'Bride + 3 Bridesmaid ', price: '5000 dkk' },
+    { title: 'Bride + 2 Bridesmaids ', price: '4000 dkk' },
+    { title: 'Bride + 3 Bridesmaids ', price: '5000 dkk' },
     { title: 'Areas not in greater CPH', price: 'DM me' },
-    { title: 'Other cities in Europe', price: 'Depends on distance' }
+    { title: 'Other cities in Europe', price: 'DM me' }
   ],
   euro: [
     { title: 'Makeup / Hairstyle', price: '120 €' },
@@ -50,9 +54,8 @@ const other = {
   ]
 }
 
-const currentCurrency = ref('dkk')
 
-const changeCurrency = (currency: string) => { currentCurrency.value = currency }
+const changeCurrency = (currency: Currency) => { currentCurrency.value = currency }
 
 </script>
 
