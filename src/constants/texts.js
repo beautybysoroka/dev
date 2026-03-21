@@ -1,6 +1,6 @@
 export const langs = {
-    EN: 'en',
-    DK: 'dk'
+    EN: 'EN',
+    DK: 'DK'
 }
 export const homeTitle1 ='HELLO BEAUTY!'
 export const homeText1 = 'My name is Maria.\n'+

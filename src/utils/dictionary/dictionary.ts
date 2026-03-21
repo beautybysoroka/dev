@@ -64,7 +64,26 @@ export const useDictionaryStore = defineStore('dictionary', () => {
         planPlaceText: [
             'Find a well-lit spot, preferably near a window with good natural light.',
             'Ensure the table is clean and organized for makeup and other instruments.'
-        ]
+        ],
+        beReady: "Be ready",
+        prepareThePlace: "Prepare the place",
+        contactMe: "CONTACT ME",
+        helpYourBeauty: "Let's help your beauty shine.",
+        menu: {
+            home: "Home",
+            plan: "Plan",
+            portfolio: "Portfolio",
+            price: "Price",
+            contacts: "Contacts"
+        },
+        brides: "Brides",
+        commercial: "Commercial",
+        brideIncludes: "Bridal package includes:",
+        other: "other",
+        eyelashes: "Eyelashes",
+        touch: "Touch up kit",
+        transit: "My transit to you",
+        events: "Events"
     }
     const dk = {
         homeTitle1: 'HEJ SMUKKE!',
@@ -112,6 +131,37 @@ export const useDictionaryStore = defineStore('dictionary', () => {
 
         seePriceListButtonText: 'Se prisliste',
         checkForMoreButtonText: 'Se flere af mine arbejder',
+        planCareText: [
+            'Håret skal være rent og tørt. Det er bedst at vaske det om aftenen eller om morgenen, men sørg for, at det er helt tørt.',
+            'Undgå at bruge hårmasker eller olier efter hårvask.',
+            'Overvej at lave en ansigtsmaske dagen før begivenheden. Det er ikke nødvendigt, men anbefales.',
+            'Undgå peeling eller andre aggressive ansigtsbehandlinger i mindst 3 uger før begivenheden.',
+            'Pas godt på dine hænder. Brug fugtgivende lotion.'
+        ],
+
+        planPlaceText: [
+            'Find et sted med godt lys, helst ved et vindue med naturligt dagslys.',
+            'Sørg for, at bordet er rent og organiseret til makeup og andre redskaber.'
+        ],
+        beReady: "Vær klar",
+        prepareThePlace: "Forbered stedet",
+        contactMe: "KONTAKT MIG",
+        helpYourBeauty: "Lad os få din skønhed til at stråle.",
+        menu: {
+            home: "Hjem",
+            plan: "Plan",
+            portfolio: "Portfolio",
+            price: "Priser",
+            contacts: "Kontakt"
+        },
+        brides: "Brude",
+        commercial: "Kommercielt",
+        brideIncludes: "Brudepakken inkluderer:",
+        other: "andet",
+        eyelashes: "Øjenvipper",
+        touch: "Touch-up kit",
+        transit: "Min transport til dig",
+        events: "Begivenheder"
     }
     const currentLang = ref(langs.DK)
 

@@ -22,7 +22,7 @@ import {
   checkForMoreButtonText
 }
 from '@/constants/texts'
-import {useDictionaryStore} from "@/utils/dictionary/dictionary.ts";
+import {useDictionaryStore} from "@/utils/dictionary/dictionary";
 import {storeToRefs} from "pinia";
 
 const router = useRouter()

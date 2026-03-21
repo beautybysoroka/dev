@@ -9,7 +9,7 @@ type Currency = 'dkk' | 'euro'
 const currentCurrency = ref<Currency>('dkk')
 
 const dictStore = useDictionaryStore()
-const { isDanish } = storeToRefs(dictStore)
+const { isDanish, dict } = storeToRefs(dictStore)
 
 const prices = {
   dkk: [
@@ -125,21 +125,21 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
     <p>/</p>
     <p @click="changeCurrency('euro')" :class="{'price__currency_active': currentCurrency === 'euro'}">Euro</p>
   </div>
-  <h4>Brides</h4>
+  <h4>{{ dict.brides }}</h4>
   <div class="price-block" v-for="(price, index) in currentPrices[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
   </div>
-  <p class="price__bridal-includes">Bridal package includes:</p>
-  <p>Eyelashes</p>
-  <p>Touch up kit</p>
-  <p>My transit to you</p>
-  <h4>Events</h4>
+  <p class="price__bridal-includes">{{dict.brideIncludes}}</p>
+  <p>{{ dict.eyelashes }}</p>
+  <p>{{dict.touch}}</p>
+  <p>{{dict.transit}}</p>
+  <h4>{{dict.events}}</h4>
   <div class="price-block" v-for="(price, index) in currentMakeup[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
   </div>
-  <h4>Other</h4>
+  <h4>{{ dict.other }}</h4>
   <div class="price-block" v-for="(price, index) in currentOther[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
