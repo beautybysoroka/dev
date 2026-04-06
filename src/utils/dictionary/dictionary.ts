@@ -85,7 +85,7 @@ export const useDictionaryStore = defineStore('dictionary', () => {
         transit: "My transit to you",
         events: "Events",
         offer: "Special offer",
-        studio_photo_shoot_with: "studio photo shoot with",
+        studio_photo_shoot_with: "Studio photo shoot with",
         there_is_a: "there is a special price:"
     }
     const dk = {
@@ -166,10 +166,10 @@ export const useDictionaryStore = defineStore('dictionary', () => {
         transit: "Min transport til dig",
         events: "Begivenheder",
         offer: "Special offer",
-        studio_photo_shoot_with: "studie fotoshoot med",
+        studio_photo_shoot_with: "Studie fotoshoot med",
         there_is_a: "der er en særlig pris:"
     }
-    const currentLang = ref(langs.DK)
+    const currentLang = ref(langs.EN)
 
     // getters
     const isDanish = computed(() => currentLang.value === langs.DK)
