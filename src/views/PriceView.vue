@@ -56,6 +56,17 @@ const specialOffer = {
   ]
 }
 
+const specialOffer_dk = {
+  dkk: [
+    { title: 'Makeup + Hår', price: '1000 dkk' },
+    { title: 'Fotoshoot', price: 'tjek på hjemmesiden' },
+  ],
+  euro: [
+    { title: 'Makeup + Hår', price: '135 €' },
+    { title: 'Fotoshoot', price: 'tjek på hjemmesiden' },
+  ]
+}
+
 const other = {
   dkk: [
     { title: 'Brows', price: '350 dkk' }
@@ -121,6 +132,7 @@ const other = {
 const currentPrices = computed(() => isDanish.value ? prices_dk : prices)
 const currentMakeup = computed(() => isDanish.value ? makeup_dk : makeup)
 const currentOther = computed(() => isDanish.value ? other_dk : other)
+const special = computed(() => isDanish.value ? specialOffer_dk : specialOffer)
 
 
 const changeCurrency = (currency: Currency) => { currentCurrency.value = currency }
@@ -149,6 +161,14 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
   </div>
+  <h4>{{dict.offer}}</h4>
+  <p class="price__about-V">{{dict.studio_photo_shoot_with}} <a href="https://www.victoriafotograf.dk/" target="_blank">Victoria fotograf</a>
+    {{dict.there_is_a}}</p>
+  <div class="price-block" v-for="(price, index) in special[currentCurrency]" :key="index">
+    <p class="price-block__title">{{price.title}}</p>
+    <a v-if="index === 1" href="https://www.victoriafotograf.dk/investment" target="_blank" class="price-block__price price-block__price_orange">{{price.price}}</a>
+    <p v-else class="price-block__title">{{price.price}}</p>
+  </div>
   <h4>{{ dict.other }}</h4>
   <div class="price-block" v-for="(price, index) in currentOther[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
@@ -159,6 +179,12 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
 
 <style scoped lang="scss">
 .price {
+  &__about-V{
+    margin-bottom: 20px;
+    a {
+      color: #efc79b;
+    }
+  }
   &__currency {
     display: flex;
     grid-gap: 4px;
@@ -185,6 +211,11 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
       display: flex;
       justify-content: space-between;
       margin-bottom: 8px;
+      &__price {
+        &_orange {
+          color: #efc79b !important;
+        }
+      }
     }
   }
   &__bridal-includes{
