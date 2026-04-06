@@ -25,6 +25,7 @@ const isNotMainPage = computed(() => route.name !== routeNames.MAIN )
   justify-content: space-between;
   align-items: center;
   padding: 16px;
+  z-index: 1000;
 }
 
 .web-header__logo {
