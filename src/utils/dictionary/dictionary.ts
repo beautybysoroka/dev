@@ -83,7 +83,10 @@ export const useDictionaryStore = defineStore('dictionary', () => {
         eyelashes: "Eyelashes",
         touch: "Touch up kit",
         transit: "My transit to you",
-        events: "Events"
+        events: "Events",
+        offer: "Special offer",
+        studio_photo_shoot_with: "studio photo shoot with",
+        there_is_a: "there is a special price:"
     }
     const dk = {
         homeTitle1: 'HEJ SMUKKE!',
@@ -161,7 +164,10 @@ export const useDictionaryStore = defineStore('dictionary', () => {
         eyelashes: "Øjenvipper",
         touch: "Touch-up kit",
         transit: "Min transport til dig",
-        events: "Begivenheder"
+        events: "Begivenheder",
+        offer: "Special offer",
+        studio_photo_shoot_with: "studie fotoshoot med",
+        there_is_a: "der er en særlig pris:"
     }
     const currentLang = ref(langs.DK)
 

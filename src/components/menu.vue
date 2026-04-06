@@ -1,6 +1,9 @@
 <script setup>
 import { ref, computed } from "vue";
 import routeNames from '@/constants/routeNames'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 import {useDictionaryStore} from "@/utils/dictionary/dictionary.js";
 import {storeToRefs} from "pinia";
 
@@ -17,11 +20,12 @@ const menuItems = computed(() => [
 ])
 
 const isOpen = ref(false);
+const isMainPage = computed(() => route.name === routeNames.MAIN)
 </script>
 <template>
   <div class="burger-menu">
     <!-- Burger Icon -->
-    <button class="burger-icon" @click="isOpen = !isOpen">
+    <button class="burger-icon" @click="isOpen = !isOpen" :class="{ 'burger-icon_white': isMainPage }">
       <span :class="{ open: isOpen }"></span>
       <span :class="{ open: isOpen }"></span>
       <span :class="{ open: isOpen }"></span>
@@ -62,6 +66,12 @@ const isOpen = ref(false);
   cursor: pointer;
   padding: 0;
   z-index: 1001;
+
+  &_white {
+    span {
+      background-color: #fff !important;
+    }
+  }
 }
 
 .burger-icon span {

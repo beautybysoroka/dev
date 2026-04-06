@@ -1,20 +1,22 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import {useDictionaryStore} from "@/utils/dictionary/dictionary.js";
 import {storeToRefs} from "pinia";
 import { langs } from '@/constants/texts'
+import routeNames from "@/constants/routeNames.js";
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const dictStore = useDictionaryStore()
 const { currentLang } = storeToRefs(dictStore)
 const { setDict } = dictStore
 
-function switchLang(lang) {
-  currentLang.value = lang
-}
+const switchLang = lang => { currentLang.value = lang }
+const isMainPage = computed(() => route.name === routeNames.MAIN)
 </script>
 
 <template>
-  <div class="lang-switcher">
+  <div class="lang-switcher" :class="{'lang-switcher_white': isMainPage}">
         <span
             :class="{ active: currentLang === langs.EN }"
             @click="setDict(langs.EN)"
@@ -28,11 +30,14 @@ function switchLang(lang) {
 </template>
 
 
-<style scoped>
+<style scoped lang="scss">
 .lang-switcher {
   display: flex;
   align-items: center;
   gap: 6px;
+  &_white {
+    color: #fff;
+  }
 }
 
 span {
