@@ -6,6 +6,14 @@ const contacts = {
   WHATSAPP: 'https://wa.me/+79143366399',
   TELEGRAM: 'https://t.me/sorokamarie',
 }
+const contactsDetails = {
+
+  EMAIL: 'beautybysoroka@gmail.com',
+  INSTAGRAM: '@beautybysoroka',
+  PHONE: '+45 91 92 1235',
+  WHATSAPP: '+7 914 33 66 399',
+  TELEGRAM: '@sorokamarie',
+}
 </script>
 
 <template>
@@ -13,11 +21,11 @@ const contacts = {
     <h2>CONTACT ME</h2>
     <p class="footer__lets">Let's help your beauty shine. </p>
     <div class="footer__links">
-    <a :href="contacts.EMAIL" target="_blank"><img src="/assets/icons/email.svg" alt="email"></a>
-    <a :href="contacts.INSTAGRAM" target="_blank"><img src="/assets/icons/instagram.svg" alt="instagram"></a>
-    <a :href="contacts.PHONE" target="_blank"><img src="/assets/icons/phone.svg" alt="phone"></a>
-    <a :href="contacts.WHATSAPP" target="_blank"><img src="/assets/icons/whatsapp.svg" alt="whatsapp"></a>
-    <a :href="contacts.TELEGRAM" target="_blank"><img src="/assets/icons/telegram.svg" alt="telegram"></a>
+    <a :href="contacts.EMAIL" target="_blank"><img src="/assets/icons/email.svg" alt="email"><p>{{contactsDetails.EMAIL}}</p></a>
+    <a :href="contacts.INSTAGRAM" target="_blank"><img src="/assets/icons/instagram.svg" alt="instagram"><p>{{contactsDetails.INSTAGRAM}}</p></a>
+    <a :href="contacts.PHONE" target="_blank"><img src="/assets/icons/phone.svg" alt="phone"><p>{{contactsDetails.PHONE}}</p></a>
+    <a :href="contacts.WHATSAPP" target="_blank"><img src="/assets/icons/whatsapp.svg" alt="whatsapp"><p>{{contactsDetails.WHATSAPP}}</p></a>
+    <a :href="contacts.TELEGRAM" target="_blank"><img src="/assets/icons/telegram.svg" alt="telegram"><p>{{contactsDetails.TELEGRAM}}</p></a>
     </div>
   </footer>
 </template>
@@ -35,8 +43,8 @@ footer {
 }
 .footer {
   &__links {
-    width: 50%;
     display: flex;
+    width: 80%;
     margin: 40px auto 60px;
     align-items: center;
     justify-content: space-between;
@@ -46,13 +54,28 @@ footer {
     transform: translateY(-10px);
   }
 }
-.footer__links a img {
-  width: 24px;
-  color: #3d3c3c;
+.footer__links a{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: #1a1a1a;
+  height: 50px;
+  p {
+    &:hover {
+      color: #efc79b;
+    }
+  }
+
+  img {
+    width: 24px;
+    color: #3d3c3c;
+  }
 }
 @media (max-width: 768px) {
   .footer__links {
-    width: 60%;
+
+    flex-direction: column;
   }
 }
 </style>

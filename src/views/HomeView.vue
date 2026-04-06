@@ -34,6 +34,7 @@ const routeTo = (routeName: string) => { router.push({ name: routeName}) }
 <template>
   <div class="about-wrapper">
     <img class="image-block__image-0" src="/assets/img/photos/home/Mariia.webp" alt="Mariia Soroks">
+    <img class="image-block__image-0_desktop" src="/assets/img/photos/home/Mariia-desktop.webp" alt="Mariia Soroks">
     <textBlock
     :title="homeTitle1"
     class="text-block-margin"
@@ -132,11 +133,23 @@ body {
   text-align: left;
   margin: 80px 0 0 -40px;
 }
+@media (max-width: 768px) {
+  .image-block {
+    &__image {
+      &-0 {
+        &_desktop {
+          display: none;
+        }
+      }
+    }
+  }
+}
 @media (min-width: 769px) {
   .image-block {
     &__image {
       &-0 {
         width: 100%;
+        display: none;
       }
       &-1 {
         width: 90%;
@@ -214,9 +227,13 @@ body {
     }
   }
 .about-wrapper {
-  margin: 0 auto 40px;
+  margin: -54px auto 40px;
   @media(min-width: 769px) {
     width: 40vw;
+    .image-block__image-0_desktop {
+      margin-left: -30vw;
+      width: 100vw;
+    }
   }
 }
 </style>

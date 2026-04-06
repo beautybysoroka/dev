@@ -40,6 +40,16 @@ const makeup = {
     { title: 'Makeup & hairstyle', price: '200 €' }
   ]
 }
+const specialOffer = {
+  dkk: [
+    { title: 'Makeup + Hair', price: '1000 dkk' },
+    { title: 'Photoshoot', price: 'check on the website' },
+  ],
+  euro: [
+    { title: 'Makeup', price: '135 €' },
+    { title: 'Hairstyle', price: 'check on the website' },
+  ]
+}
 
 const other = {
   dkk: [
@@ -78,6 +88,14 @@ const changeCurrency = (currency: Currency) => { currentCurrency.value = currenc
   <p>My transit to you</p>
   <h4>Events</h4>
   <div class="price-block" v-for="(price, index) in makeup[currentCurrency]" :key="index">
+    <p class="price-block__title">{{price.title}}</p>
+    <p class="price-block__price">{{price.price}}</p>
+  </div>
+  <h4>Special offer</h4>
+  <p>If you book studio photo shoot with <a href="https://www.victoriafotograf.dk/ " target="_blank">Victoria fotograf</a>
+    there is a special price:
+  </p>
+  <div class="price-block" v-for="(price, index) in specialOffer[currentCurrency]" :key="index">
     <p class="price-block__title">{{price.title}}</p>
     <p class="price-block__price">{{price.price}}</p>
   </div>
