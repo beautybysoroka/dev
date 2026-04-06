@@ -2,6 +2,11 @@
 import routeNames from '@/constants/routeNames'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
+import {useDictionaryStore} from "@/utils/dictionary/dictionary";
+import {storeToRefs} from "pinia";
+
+const dictStore = useDictionaryStore()
+const { dict } = storeToRefs(dictStore)
 
 const router = useRouter()
 const routeToBrides = () => { router.push({name: routeNames.PORTFOLIO, hash: '#brides'})}
@@ -34,10 +39,10 @@ const isVideo = (src: string) => src.includes('mp4')
 <template>
   <div class="portfolio-wrapper common-wrapper">
     <div class="portfolio-menu">
-      <p @click="routeToBrides()">Brides</p>
-      <p @click="routeToCommercial()">Commercial</p>
+      <p @click="routeToBrides()">{{ dict.brides }}</p>
+      <p @click="routeToCommercial()">{{dict.commercial}}</p>
     </div>
-    <h2 id="brides">Brides</h2>
+    <h2 id="brides">{{ dict.brides }}</h2>
     <div  class="gallery gallery-brides">
       <template v-for="(src, idx) in bridesPhotos">
       <video
@@ -58,7 +63,7 @@ const isVideo = (src: string) => src.includes('mp4')
       />
       </template>
     </div>
-    <h2 id="commercial">Commercial</h2>
+    <h2 id="commercial">{{ dict.commercial }}</h2>
     <div  class="gallery gallery-commercial">
       <template v-for="(src, idx) in commercialPhotos" :key="src">
         <video :src="src"

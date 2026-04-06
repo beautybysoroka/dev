@@ -1,26 +1,19 @@
 <script setup lang="ts">
-const planCareText = [
-  'Hair should be clean and dry. It’s best to wash it in the evening or morning, but make sure it is completely dry.',
-  'Avoid using hair masks or oils after washing your hair.',
-  'Consider doing a facial mask the day before the event. Not mandatory, but recommended.',
-  'Do not perform peeling or any other aggressive facial procedures for at least 3 weeks before the event.',
-  'Take good care of your hands. Use moisturizing lotions.'
-]
+import {useDictionaryStore} from "@/utils/dictionary/dictionary";
+import { storeToRefs} from "pinia";
 
-const planPlaceText = [
-  'Find a well-lit spot, preferably near a window with good natural light.',
-  'Ensure the table is clean and organized for makeup and other instruments.'
-]
+const dictStore = useDictionaryStore()
+const { dict } = storeToRefs(dictStore)
 </script>
 
 <template>
 <div class="plan-wrapper">
-  <h2>Be ready</h2>
-  <p v-for="(text, index) in planCareText">
+  <h2>{{ dict.beReady }}</h2>
+  <p v-for="(text, index) in dict.planCareText">
     {{index + 1}}. {{text}}
   </p>
-  <h2>Prepare the place</h2>
-  <p v-for="(text, index) in planPlaceText">
+  <h2>{{dict.prepareThePlace}}</h2>
+  <p v-for="(text, index) in dict.planPlaceText">
     {{index + 1}}. {{text}}
   </p>
 </div>
