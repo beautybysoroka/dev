@@ -51,8 +51,8 @@ const specialOffer = {
     { title: 'Photoshoot', price: 'check on the website' },
   ],
   euro: [
-    { title: 'Makeup', price: '135 €' },
-    { title: 'Hairstyle', price: 'check on the website' },
+    { title: 'Makeup + Hair', price: '135 euro' },
+    { title: 'Photoshoot', price: 'check on the website' },
   ]
 }
 
